@@ -1,0 +1,45 @@
+.Button {
+  height: 500px;
+  width: 350px;
+  background-color: #8a8a8a;
+  color: #000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 250px 10px 250px 10px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 16px;
+
+  cursor: pointer;
+  user-select: none;
+
+  text-transform: uppercase;
+  transition: all 10s ease-in-out;
+  animation: anim 28s infinite;
+
+  .content {
+    font-size: 20px;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      letter-spacing: 2px;
+    }
+  }
+}
+
+@keyframes anim {
+  0% {
+    border-radius: 240px 1px 260px 10px;
+  }
+  30% {
+    border-radius: 210px 50px 300px 80px;
+  }
+  60% {
+    border-radius: 140px 210px 160px 250px;
+  }
+  100% {
+    border-radius: 240px 1px 260px 10px;
+  }
+}
