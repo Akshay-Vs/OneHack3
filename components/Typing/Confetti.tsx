@@ -4,7 +4,7 @@ import Confetti from "react-confetti";
 const ShowConfetti = () => {
   return (
     <Confetti
-      width={screen.availWidth - 150}
+      width={screen.availWidth - 800}
       height={screen.availHeight - 150}
       recycle={false}
       friction={0.99}
@@ -18,7 +18,7 @@ const ShowConfetti = () => {
         x: screen.availWidth / 2,
         y: screen.availHeight / 2,
         w: 50,
-        h: 50,
+        h: 0,
       }}
       colors={["#3ddada", "#aaa0aa", "#66d116", "#43ae43"]}
     />

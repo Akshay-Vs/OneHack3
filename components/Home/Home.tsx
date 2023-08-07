@@ -7,12 +7,14 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { faEarth } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   const [render, setRender] = useState(false);
   const [show, setShow] = useState(false);
+  const [showText, setShowText] = useState(false);
+
   useEffect(() => {
     window.innerWidth > 720 ? setRender(true) : setRender(false);
   }, []);
@@ -32,13 +34,20 @@ const Home = () => {
               Master the <br />
               <span>Keyboard with Lightning</span> Speed
             </h1>
-            <div className="pt-72">
+            <div className="pt-72 flex">
               <Link
                 href="#"
-                className="m-4 flex text-4xl font-thin underline underline-offset-8 tracking-wider"
+                className="m-4 flex w-full text-4xl font-thin underline underline-offset-8 tracking-wider"
+                onClick={() => setShowText(!showText)}
               >
                 Welcome to Shiftype
               </Link>
+              {showText && (
+                <div className="px-5 m-4 flex text-xl opacity-25 -scale-x-[1] font-thin tracking-[7px] w-full justify-end align-bottom">
+                  Made for OneHack 23 <br />
+                  By Akshay Vs
+                </div>
+              )}
             </div>
           </div>
           <div className="flex-2 p-10 mr-12">
@@ -93,24 +102,16 @@ const Home = () => {
               </h3>
             </div>
             <div className="flex flex-col h-full justify-end opacity-40">
-              <h6 className="text-center p-3 ">
-                Meanwhile, checkout other profiles
+              <h6 className="text-center p-3 -scale-x-[1]">
+                Meanwhile, checkout my other profiles
               </h6>
               <div className="flex align-middle text-3xl pb-24 justify-center">
                 <Link href="https://github.com/akshay-vs">
                   <FontAwesomeIcon icon={faGithub} className="px-3" />
                 </Link>
 
-                <Link href="https://instagram.com/akshay._.vs__">
-                  <FontAwesomeIcon icon={faInstagram} className="px-3" />
-                </Link>
-
                 <Link href="https://akshayvs.me">
                   <FontAwesomeIcon icon={faEarth} className="px-3" />
-                </Link>
-
-                <Link href="https://www.linkedin.com/in/akshay-vs-653667231/">
-                  <FontAwesomeIcon icon={faLinkedin} className="px-3" />
                 </Link>
               </div>
             </div>
